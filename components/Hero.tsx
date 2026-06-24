@@ -20,7 +20,7 @@ export default function Hero() {
         transition={{ duration: 0.8 }}
         className="text-center max-w-4xl mx-auto relative z-10"
       >
-        {/* Profile Image with Glass Effect */}
+        {/* Profile Image */}
         <motion.div 
           initial={{ scale: 0 }}
           animate={{ scale: 1 }}
@@ -39,7 +39,7 @@ export default function Hero() {
           </div>
         </motion.div>
 
-        {/* Name with Gradient */}
+        {/* Name */}
         <motion.h1 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -51,7 +51,6 @@ export default function Hero() {
           </span>
         </motion.h1>
         
-        {/* Title */}
         <motion.p 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -61,7 +60,6 @@ export default function Hero() {
           <span className="text-cyan-400">Computer Systems Engineer</span>
         </motion.p>
         
-        {/* Tags */}
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -78,7 +76,6 @@ export default function Hero() {
           ))}
         </motion.div>
 
-        {/* Social Links with Glass Effect */}
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -126,8 +123,9 @@ export default function Hero() {
           <motion.a 
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            href="/CV_Mohale%20Boniwe%20Sthembiso.pdf" 
-            download
+            href="/CV_Mohale_Boniwe_Sthembiso.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
             className="group inline-flex items-center justify-center gap-2 px-8 py-3 border border-cyan-400/50 hover:border-cyan-400 rounded-full font-semibold transition bg-white/5 backdrop-blur-sm hover:bg-white/10"
           >
             <FaDownload className="group-hover:translate-y-0.5 transition-transform" />
@@ -135,7 +133,6 @@ export default function Hero() {
           </motion.a>
         </motion.div>
 
-        {/* Scroll Indicator */}
         <motion.div 
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
