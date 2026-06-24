@@ -8,17 +8,9 @@ const certificates = [
     name: "Six Sigma White Belt Certificate",
     issuer: "Council for Six Sigma Certification",
     date: "2024",
-    file: "/certificates/six-sigma-white-belt",
+    file: "/certificates/six-sigma-white-belt.pdf",  // Updated with .pdf
     icon: "📊",
   },
-  // Add more certificates here as you get them
-  // {
-  //   name: "Your Certificate Name",
-  //   issuer: "Issuing Organization",
-  //   date: "2024",
-  //   file: "/certificates/your-file",
-  //   icon: "📜",
-  // },
 ];
 
 export default function Certificates() {
@@ -49,25 +41,16 @@ export default function Certificates() {
               whileHover={{ y: -5, scale: 1.02 }}
               className="bg-white/5 backdrop-blur-lg rounded-2xl p-6 border border-white/10 hover:border-cyan-400/50 transition-all duration-300 hover:shadow-[0_0_30px_rgba(0,180,255,0.1)]"
             >
-              {/* Icon */}
               <div className="text-4xl mb-3">{cert.icon}</div>
-              
-              {/* Certificate Name */}
               <h3 className="text-lg font-semibold text-white mb-1">
                 {cert.name}
               </h3>
-              
-              {/* Issuer */}
               <p className="text-sm text-gray-400 mb-1">
                 Issued by: <span className="text-cyan-400">{cert.issuer}</span>
               </p>
-              
-              {/* Date */}
               <p className="text-sm text-gray-500 mb-4">
                 {cert.date}
               </p>
-
-              {/* Download Button */}
               <motion.a
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
