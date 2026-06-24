@@ -9,7 +9,6 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
-  // Detect scroll for background change
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
@@ -22,6 +21,8 @@ export default function Navbar() {
     { name: "About", href: "#about" },
     { name: "Skills", href: "#skills" },
     { name: "Projects", href: "#projects" },
+    { name: "Certificates", href: "#certificates" },
+    { name: "Roadmap", href: "#roadmap" },
     { name: "Contact", href: "#contact" },
   ];
 
@@ -34,7 +35,6 @@ export default function Navbar() {
       }`}
     >
       <div className="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
-        {/* Logo */}
         <Link 
           href="/" 
           className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 hover:from-cyan-300 hover:via-blue-400 hover:to-purple-400 transition-all duration-300"
@@ -42,7 +42,6 @@ export default function Navbar() {
           Boniwe.dev
         </Link>
         
-        {/* Desktop Navigation */}
         <div className="hidden md:flex items-center space-x-1">
           {navLinks.map((link) => (
             <Link
@@ -51,11 +50,9 @@ export default function Navbar() {
               className="relative px-4 py-2 text-gray-300 hover:text-cyan-400 transition-colors duration-300 text-sm font-medium group"
             >
               {link.name}
-              {/* Animated underline */}
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-cyan-400 to-blue-500 transition-all duration-300 group-hover:w-full" />
             </Link>
           ))}
-          {/* Resume Button */}
           <a
             href="/CV_Mohale_Boniwe_Sthembiso.pdf"
             download
@@ -65,7 +62,6 @@ export default function Navbar() {
           </a>
         </div>
         
-        {/* Mobile Menu Button */}
         <button 
           className="md:hidden text-white p-2 hover:text-cyan-400 transition-colors"
           onClick={() => setIsOpen(!isOpen)}
@@ -75,7 +71,6 @@ export default function Navbar() {
         </button>
       </div>
       
-      {/* Mobile Navigation */}
       <AnimatePresence>
         {isOpen && (
           <motion.div 
@@ -117,11 +112,3 @@ export default function Navbar() {
     </nav>
   );
 }
-const navLinks = [
-  { name: "About", href: "#about" },
-  { name: "Skills", href: "#skills" },
-  { name: "Projects", href: "#projects" },
-  { name: "Certificates", href: "#certificates" },
-  { name: "Roadmap", href: "#roadmap" },
-  { name: "Contact", href: "#contact" },
-];
