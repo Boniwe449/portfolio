@@ -51,7 +51,7 @@ export default function Hero() {
           </span>
         </motion.h1>
         
-        {/* Title with Typing Effect */}
+        {/* Title */}
         <motion.p 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -126,7 +126,7 @@ export default function Hero() {
           <motion.a 
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            href="/CV_Mohale_Boniwe_Sthembiso.pdf" 
+            href="/CV_Mohale%20Boniwe%20Sthembiso.pdf" 
             download
             className="group inline-flex items-center justify-center gap-2 px-8 py-3 border border-cyan-400/50 hover:border-cyan-400 rounded-full font-semibold transition bg-white/5 backdrop-blur-sm hover:bg-white/10"
           >
