@@ -117,3 +117,11 @@ export default function Navbar() {
     </nav>
   );
 }
+const navLinks = [
+  { name: "About", href: "#about" },
+  { name: "Skills", href: "#skills" },
+  { name: "Projects", href: "#projects" },
+  { name: "Certificates", href: "#certificates" },
+  { name: "Roadmap", href: "#roadmap" },
+  { name: "Contact", href: "#contact" },
+];

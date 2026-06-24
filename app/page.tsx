@@ -6,6 +6,7 @@ import Contact from "@/components/Contact";
 import Navbar from "@/components/Navbar";
 import Stats from "@/components/Stats";
 import Certificates from "@/components/Certificates";
+import Roadmap from "@/components/Roadmap";
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
       <Skills />
       <Projects />
       <Certificates />
+      <Roadmap />
       <Contact />
     </main>
   );

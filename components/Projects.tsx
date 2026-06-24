@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
+import { FaExternalLinkAlt } from "react-icons/fa";
 
 const projects = [
   {
@@ -9,24 +9,28 @@ const projects = [
     description: "Deployed a cloud-based honeypot on Microsoft Azure to attract real-world cyber-attacks. Configured and integrated a SIEM solution to aggregate, analyze, and correlate attack logs in real time. Visualized live threat intelligence including attacker geolocation and attack patterns.",
     tech: ["Azure", "SIEM", "Cloud Security", "Threat Intelligence"],
     link: "#",
+    featured: true,
   },
   {
     title: "SOC Automation Lab (Wazuh & Splunk)",
     description: "Established a comprehensive SOC lab environment integrating Wazuh for endpoint detection and response (EDR) alongside Splunk for centralized log aggregation. Developed custom dashboards and automated alerting workflows to reduce MTTD and MTTR.",
     tech: ["Wazuh", "Splunk", "EDR", "Security Automation"],
     link: "#",
+    featured: false,
   },
   {
     title: "Threat Detection & SIEM (Elastic Stack)",
     description: "Deployed a cloud-based honeypot with Elastic Stack SIEM for real-time threat detection. Visualized attack patterns and implemented automated incident response workflows for improved security monitoring.",
     tech: ["Elastic Stack", "SIEM", "Threat Detection", "Automation"],
     link: "#",
+    featured: false,
   },
   {
     title: "Phishing Detection System",
     description: "Developed a system to automatically identify and analyze phishing campaigns. Utilized email header analysis, domain reputation scoring, and payload inspection to classify suspicious emails and block malicious senders.",
     tech: ["Python", "Email Analysis", "Threat Intelligence", "Security"],
     link: "#",
+    featured: false,
   },
 ];
 
@@ -41,13 +45,13 @@ export default function Projects() {
         className="max-w-6xl mx-auto"
       >
         <h2 className="text-4xl font-bold mb-4 text-center">
-          My <span className="text-blue-400">Projects</span>
+          My <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">Projects</span>
         </h2>
         <p className="text-gray-400 text-center mb-10 max-w-2xl mx-auto">
           Cybersecurity and software development projects showcasing my skills in threat detection, 
           security automation, and system analysis.
         </p>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {projects.map((project, index) => (
             <motion.div
@@ -56,9 +60,14 @@ export default function Projects() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="bg-gray-900/50 rounded-2xl p-6 border border-gray-800 hover:border-blue-500/50 transition group"
+              whileHover={{ y: -5, scale: 1.02 }}
+              className={`bg-white/5 backdrop-blur-lg rounded-2xl p-6 border border-white/10 hover:border-cyan-400/50 transition-all duration-300 hover:shadow-[0_0_30px_rgba(0,180,255,0.1)] ${
+                project.featured ? 'md:col-span-2 md:p-8 bg-white/10' : ''
+              }`}
             >
-              <h3 className="text-xl font-bold mb-3 group-hover:text-blue-400 transition">
+              <h3 className={`font-bold mb-2 transition group-hover:text-cyan-400 ${
+                project.featured ? 'text-2xl text-cyan-400' : 'text-xl text-white'
+              }`}>
                 {project.title}
               </h3>
               <p className="text-gray-400 text-sm mb-4 leading-relaxed">
@@ -66,17 +75,15 @@ export default function Projects() {
               </p>
               <div className="flex flex-wrap gap-2 mb-4">
                 {project.tech.map((tech, i) => (
-                  <span key={i} className="px-3 py-1 bg-blue-500/10 text-blue-400 rounded-full text-xs">
+                  <span key={i} className="px-3 py-1 bg-cyan-500/10 text-cyan-400 rounded-full text-xs border border-cyan-500/20">
                     {tech}
                   </span>
                 ))}
               </div>
-              <div className="flex gap-4">
-                <a href={project.link} target="_blank" rel="noopener noreferrer"
-                   className="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 transition text-sm">
-                  <FaExternalLinkAlt /> View Project
-                </a>
-              </div>
+              <a href={project.link} target="_blank" rel="noopener noreferrer"
+                 className="inline-flex items-center gap-2 text-cyan-400 hover:text-cyan-300 transition text-sm">
+                <FaExternalLinkAlt /> View Project
+              </a>
             </motion.div>
           ))}
         </div>
