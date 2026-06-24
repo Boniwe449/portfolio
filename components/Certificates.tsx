@@ -8,7 +8,7 @@ const certificates = [
     name: "Six Sigma White Belt Certificate",
     issuer: "Council for Six Sigma Certification",
     date: "2024",
-    file: "/certificates/six-sigma-white-belt.pdf",
+    file: "/certificates/six-sigma-white-belt",
     icon: "📊",
   },
   // Add more certificates here as you get them
@@ -16,7 +16,7 @@ const certificates = [
   //   name: "Your Certificate Name",
   //   issuer: "Issuing Organization",
   //   date: "2024",
-  //   file: "/certificates/your-file.pdf",
+  //   file: "/certificates/your-file",
   //   icon: "📜",
   // },
 ];
