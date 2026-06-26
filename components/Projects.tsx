@@ -71,15 +71,27 @@ export default function Projects() {
               }`}
             >
               {/* Project Image */}
-              <div className="relative w-full h-48 md:h-56 overflow-hidden">
+              <div className="relative w-full h-48 md:h-56 overflow-hidden bg-gray-800/50">
                 <Image
                   src={project.image}
                   alt={project.title}
                   fill
                   className="object-cover hover:scale-105 transition-transform duration-500"
+                  onError={(e) => {
+                    // If image fails to load, show a fallback
+                    const target = e.target as HTMLImageElement;
+                    target.style.display = 'none';
+                    const parent = target.parentElement;
+                    if (parent) {
+                      const fallback = document.createElement('div');
+                      fallback.className = 'w-full h-full flex items-center justify-center text-cyan-400 text-4xl bg-gray-900/50';
+                      fallback.textContent = '🖥️';
+                      parent.appendChild(fallback);
+                    }
+                  }}
                 />
                 {project.featured && (
-                  <div className="absolute top-4 left-4 px-3 py-1 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full text-xs font-semibold text-white shadow-lg">
+                  <div className="absolute top-4 left-4 px-3 py-1 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full text-xs font-semibold text-white shadow-lg z-10">
                     Featured
                   </div>
                 )}
