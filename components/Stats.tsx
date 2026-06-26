@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 const stats = [
   { number: "1", label: "Certifications" },
   { number: "4", label: "Projects" },
-  { number: "3+", label: "Years of Learning" },
+  { number: "6+", label: "Years of Learning" },
   { number: "1", label: "Internship" },
 ];
 
